@@ -1,0 +1,188 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F4F4F4"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/headerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bill Splitter"
+            android:textSize="24sp"
+            android:textColor="#333333"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/totalBillLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Bill (RM):"
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:layout_below="@id/headerText"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/totalBillEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/totalBillLabel"
+            android:layout_marginTop="4dp"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:background="#FFFFFF"
+            android:padding="8dp"
+            android:hint="Enter total bill amount" />
+
+        <TextView
+            android:id="@+id/numberOfPeopleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of People:"
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:layout_below="@id/totalBillEditText"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/numberOfPeopleEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/numberOfPeopleLabel"
+            android:layout_marginTop="4dp"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:background="#FFFFFF"
+            android:padding="8dp"
+            android:hint="Enter number of people" />
+
+        <TextView
+            android:id="@+id/breakdownOptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Breakdown Option:"
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:layout_below="@id/numberOfPeopleEditText"
+            android:layout_marginTop="16dp" />
+
+        <RadioGroup
+            android:id="@+id/breakdownOptionRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/breakdownOptionLabel"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/equalRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Equal"
+                android:textColor="#333333" />
+
+            <RadioButton
+                android:id="@+id/customPercentageRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom by Percentage"
+                android:textColor="#333333"
+                android:layout_marginTop="8dp" />
+
+            <RadioButton
+                android:id="@+id/customAmountRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom by Amount"
+                android:textColor="#333333"
+                android:layout_marginTop="8dp" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/percentageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/breakdownOptionRadioGroup"
+            android:layout_marginTop="16dp"
+            android:text="Enter Individual Percentages:"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/percentageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/percentageLabel"
+            android:orientation="vertical">
+
+            <!-- Add EditText fields for individual percentages here -->
+            <!-- These will be dynamically added based on the number of people -->
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/amountLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/percentageLayout"
+            android:layout_marginTop="16dp"
+            android:text="Enter Individual Amounts:"
+            android:textSize="18sp"
+            android:textColor="#333333" />
+
+        <LinearLayout
+            android:id="@+id/amountLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/amountLabel"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp" >
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/calculateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/amountLayout"
+            android:layout_marginTop="16dp"
+            android:text="Calculate"
+            android:textColor="#FFFFFF"
+            android:background="#FF6F00"
+            android:padding="12dp"
+            android:elevation="2dp" />
+
+        <!-- Result -->
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/calculateButton"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:textColor="#333333" />
+
+        <!-- Share Button -->
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/resultTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Share"
+            android:textColor="#FFFFFF"
+            android:background="#FF6F00"
+            android:padding="12dp"
+            android:elevation="2dp" />
+
+    </RelativeLayout>
+
+</ScrollView>
